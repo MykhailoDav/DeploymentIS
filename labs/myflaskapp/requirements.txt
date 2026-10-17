@@ -1,2 +1,4 @@
 flask==2.2.5
 werkzeug==2.2.3
+pymysql==1.1.1
+cryptography==43.0.3
