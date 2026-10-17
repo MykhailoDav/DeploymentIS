@@ -1,0 +1,32 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  # --- Машина 1: Ubuntu 24.04 ---
+  config.vm.define "ubuntu" do |ubuntu|
+    ubuntu.vm.box = "utm/ubuntu-24.04"
+    ubuntu.vm.hostname = "ubuntu-vm"
+
+    ubuntu.vm.provider "utm" do |u|
+      u.name   = "lab1-ubuntu"
+      u.cpus   = 2
+      u.memory = 2048
+      u.notes  = "Лабораторна 1, машина 1"
+    end
+  end
+
+  # --- Машина2: Debian 12 ---
+  config.vm.define "debian" do |debian|
+    debian.vm.box = "utm/bookworm"
+    debian.vm.hostname = "debian-vm"
+
+    debian.vm.provider "utm" do |u|
+      u.name   = "lab1-debian"
+      u.cpus   = 1
+      u.memory = 1024
+      u.notes  = "Лабораторна 1, машина 2"
+    end
+  end
+
+end
